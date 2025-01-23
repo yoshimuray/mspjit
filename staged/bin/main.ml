@@ -7,11 +7,11 @@ let () =
   let iterations = 500000 in
   let base = 3 in
   let expo = 20 in
-  let spowern = Runcode.run (.<fun x -> .~(spower expo .<x>.)>.) in
+  let spowern = Runnative.run (.<fun x -> .~(spower expo .<x>.)>.) in
 
   let start_time = Unix.gettimeofday () in
 
-  let _ = for i = 1 to iterations do
+  let _ = for _ = 1 to iterations do
     let _ = spowern base in ()
   done in
 

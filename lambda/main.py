@@ -1,3 +1,5 @@
+import time
+
 def lpower(n):
     if n == 0:
         return lambda x: 1
@@ -10,8 +12,15 @@ def main():
     base = 3
     expo = 20
     lpowern = lpower(expo)
+
+    start_time = time.time()
+
     for _ in range(iterations):
         lpowern(base)
+
+    end_time = time.time()
+
+    print(f"Elapsed time: {end_time - start_time} s")
 
 if __name__ == '__main__':
     main()
